@@ -49,3 +49,13 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+
+function hello() {
+    alert('hello');
+}
+	  
+function bye() {
+    alert('bye');
+}
+
