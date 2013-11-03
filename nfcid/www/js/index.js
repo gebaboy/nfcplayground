@@ -36,6 +36,8 @@ var app = {
         app.receivedEvent('deviceready');
         document.getElementById('touchable').addEventListener('touchstart', hello, false);
         document.getElementById('touchable').addEventListener('touchend', bye, false);
+	window.addEventListener("batterystatus", displayBatteryStatus, false);
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -61,3 +63,8 @@ function bye() {
     this.innerHTML = "Much better!";
 }
 
+function displayBatteryStatus(info) {
+    var parentElement = document.getElementById('deviceready');
+    parentElement.innerHTML = 'Battery is now at' + info.level + '%';
+
+}
