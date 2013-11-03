@@ -52,12 +52,12 @@ var app = {
 
 
 function hello() { 
-    //this.classlist.add('blink');
+    this.classlist.add('zigzag');
     this.innerHTML = "Squeeezed!";
 }
 	  
 function bye() {
-    //this.classlist.remove('blink');
+    this.classlist.remove('zigzag');
     this.innerHTML = "Much better!";
 }
 
