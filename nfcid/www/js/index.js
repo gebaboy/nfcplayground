@@ -34,8 +34,8 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        document.getElementById('touchstart').addEventListener('touchstart', hello, false);
-        document.getElementById('touchend').addEventListener('touchend', bye, false);
+        document.getElementById('touchable').addEventListener('touchstart', hello, false);
+        document.getElementById('touchable').addEventListener('touchend', bye, false);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -52,10 +52,10 @@ var app = {
 
 
 function hello() {
-    alert('hello');
+    this.classlist.add('blink');
 }
 	  
 function bye() {
-    alert('bye');
+    this.classlist.remove('blink');
 }
 
