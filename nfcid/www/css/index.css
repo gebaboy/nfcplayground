@@ -25,8 +25,8 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:linear-gradient(top, #07A7A7 0%, #E4E404 51%);
+    background-image:-webkit-linear-gradient(top, #07A7A7 0%, #E4E404 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-gradient(
         linear,
@@ -37,7 +37,7 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:24px;
     height:100%;
     margin:0px;
     padding:0px;
@@ -47,11 +47,11 @@ body {
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    background:url(../img/logo.png) repeat-x center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
     top:50%;
-    height:50px;                   /* text area height */
+    height:100px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
@@ -112,4 +112,21 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+@keyframes vibrate {
+    from { top: 0px; }
+    50% { top: 10px; }
+    to { top: 0px; }
+}
+ 
+@-webkit-keyframes vibrate {
+    from { top: 0px; }
+    50% { top: 10px; }
+    to { top: 0px; }
+}
+ 
+.zigzag {
+    animation:vibrate 1000ms infinite;
+    -webkit-animation:vibrate 1000ms infinite;
 }
