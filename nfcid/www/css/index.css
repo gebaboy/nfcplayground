@@ -55,7 +55,7 @@ body {
     width:450px;                   /* text area width */
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+    margin:-115px 0px 0px -225px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
 
@@ -115,15 +115,15 @@ h1 {
 }
 
 @keyframes vibrate {
-    from { top: 0px; }
-    50% { top: 10px; }
-    to { top: 0px; }
+    from { font-size: 16px; }
+    50% { font-size: 32px; }
+    to { font-size: 16px; }
 }
  
 @-webkit-keyframes vibrate {
-    from { top: 0px; }
-    50% { top: 10px; }
-    to { top: 0px; }
+    from { font-size: 16px; }
+    50% { font-size: 32px; }
+    to { font-size: 16px; }
 }
  
 .zigzag {
