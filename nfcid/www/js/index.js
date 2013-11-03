@@ -51,11 +51,13 @@ var app = {
 };
 
 
-function hello() {
-    this.classlist.add('blink');
+function hello() { 
+    //this.classlist.add('blink');
+    this.innerHTML = "Squeeezed!";
 }
 	  
 function bye() {
-    this.classlist.remove('blink');
+    //this.classlist.remove('blink');
+    this.innerHTML = "Much better!";
 }
 
