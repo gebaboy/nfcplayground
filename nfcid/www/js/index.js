@@ -37,10 +37,10 @@ var app = {
         document.getElementById('touchable').addEventListener('touchstart', hello, false);
         document.getElementById('touchable').addEventListener('touchend', bye, false);
 	window.addEventListener("batterystatus", displayBatteryStatus, false);
-	nfc.addNdefListener(nfcTagDetected, 
-				     function() {alert("NFC listener up.");},
-	 			     function() {alert("NFC listener error.");},
-	 			    );
+//	nfc.addNdefListener(nfcTagDetected, 
+//				     function() {alert("NFC listener up.");},
+//	 			     function() {alert("NFC listener error.");},
+//	 			    );
 
     },
     // Update DOM on a Received Event
