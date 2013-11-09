@@ -37,6 +37,7 @@ var app = {
         document.getElementById('touchable').addEventListener('touchstart', hello, false);
         document.getElementById('touchable').addEventListener('touchend', bye, false);
 	window.addEventListener("batterystatus", displayBatteryStatus, false);
+	nfc.addTagDiscoveredListener('nfcTagDetected');
 
     },
     // Update DOM on a Received Event
@@ -65,6 +66,10 @@ function bye() {
 
 function displayBatteryStatus(info) {
     var parentElement = document.getElementById('deviceready');
-    parentElement.innerHTML = 'Battery is now at' + info.level + '%';
+    parentElement.innerHTML = 'Battery is now at ' + info.level + '%';
 
+}
+
+function nfcTagDetected() {
+    alert(ndef.bytesToHexString(tag.id));
 }
