@@ -55,5 +55,5 @@
       <param name="domain" value="http://192.168.1.26:8080"/>
       <param name="key" value="nfciddebug"/>
     </feature>
-    <access origin="*" />
+    <access origin="127.0.0.1*" />
 </widget>
