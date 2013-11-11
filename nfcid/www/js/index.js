@@ -72,7 +72,6 @@ function bye() {
 function displayBatteryStatus(info) {
     var parentElement = document.getElementById('deviceready');
     parentElement.innerHTML = 'Battery is now at ' + info.level + '%';
-
 }
 
 function nfcTagDetected(nfcEvent) {
@@ -80,7 +79,7 @@ function nfcTagDetected(nfcEvent) {
     alert("Nfc working!");
     console.log('Read NFC card');
     console.log(nfcEvent.tag.id);
-    console.log(ndef.bytesToHexString(nfcEvent.tag.id));
+    console.log(nfc.bytesToHexString(nfcEvent.tag.id));
     //console.log(nfcEvent.tag.id);
     nfctmp = nfcEvent;
 }
