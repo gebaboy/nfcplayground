@@ -60,6 +60,7 @@ var app = {
 function hello() { 
     this.classList.add('zigzag');
     this.innerHTML = "Squeeezed!";
+    console.log('Squeezed.');
 }
 	  
 function bye() {
