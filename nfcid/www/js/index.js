@@ -77,5 +77,5 @@ function displayBatteryStatus(info) {
 function nfcTagDetected(nfcEvent) {
     //alert(ndef.bytesToHexString(tag.id));
     alert("Nfc working!");
-    console.log('Read NFC card id ' + ndef.bytesToHexString(tag.id));
+    console.log('Read NFC card id ' + ndef.bytesToHexString(nfcEvent.tag.id));
 }
