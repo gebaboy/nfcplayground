@@ -56,6 +56,7 @@ var app = {
     }
 };
 
+var nfctmp;
 
 function hello() { 
     this.classList.add('zigzag');
@@ -77,5 +78,6 @@ function displayBatteryStatus(info) {
 function nfcTagDetected(nfcEvent) {
     //alert(ndef.bytesToHexString(tag.id));
     alert("Nfc working!");
-    console.log('Read NFC card id ' + ndef.bytesToHexString(nfcEvent.tag.id));
+    console.log('Read NFC card');// id ' + ndef.bytesToHexString(nfcEvent.tag.id));
+    nfctmp = nfcEvent;
 }
