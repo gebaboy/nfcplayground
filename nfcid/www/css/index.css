@@ -130,3 +130,7 @@ h1 {
     animation:vibrate 1000ms infinite;
     -webkit-animation:vibrate 1000ms infinite;
 }
+
+#nfclist {
+    height: 200px;
+}
