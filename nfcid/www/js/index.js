@@ -56,7 +56,8 @@ var app = {
     }
 };
 
-var nfctmp;
+var nfclistmap = new Object();
+var nfclastactive = "";
 
 function hello() { 
     this.classList.add('zigzag');
@@ -75,11 +76,17 @@ function displayBatteryStatus(info) {
 }
 
 function nfcTagDetected(nfcEvent) {
+    var domparent = document.getElementById('nfclist');
+    var para=document.createElement("P");
+    var t=document.createTextNode(nfc.bytesToHexString(nfcEvent.tag.id));
+    para.appendChild(t);
+    para.classList.add('event');
+    para.classList.add('received');
+    domparent.appendChild(para);
+
     //alert(ndef.bytesToHexString(tag.id));
-    alert("Nfc working!");
+    //alert("Nfc working!");
     console.log('Read NFC card');
     console.log(nfcEvent.tag.id);
     console.log(nfc.bytesToHexString(nfcEvent.tag.id));
-    //console.log(nfcEvent.tag.id);
-    nfctmp = nfcEvent;
 }
