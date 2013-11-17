@@ -82,6 +82,7 @@ function nfcTagDetected(nfcEvent) {
 
     //if got the first time
     if(typeof nfclistmap[idreceived] !== "undefined"){
+	console.log("newnfc");
 	var docfrag = document.createDocumentFragment();
 	var para=document.createElement("P");
 	var t=document.createTextNode(nfc.bytesToHexString(nfcEvent.tag.id));
@@ -100,6 +101,7 @@ function nfcTagDetected(nfcEvent) {
 	nfclastactive = para;
     }
     else {
+	console.log("oldnfc");
 	if (nfclistmap[idreceived] != nfclastactive) {
 	    nfclastactive.classList.remove('received');
 	    nfclastactive.classList.add('listening');
