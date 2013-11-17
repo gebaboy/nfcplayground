@@ -57,7 +57,7 @@ var app = {
 };
 
 var nfclistmap = new Object();
-var nfclastactive = "";
+var nfclastactive;
 
 function hello() { 
     this.classList.add('zigzag');
@@ -77,17 +77,40 @@ function displayBatteryStatus(info) {
 
 function nfcTagDetected(nfcEvent) {
     var domparent = document.getElementById('nfclist');
-    var docfrag = document.createDocumentFragment();
-    var para=document.createElement("P");
-    var t=document.createTextNode(nfc.bytesToHexString(nfcEvent.tag.id));
-    
-    para.classList.add('event');
-    para.classList.add('received');
-    para.setAttribute('style', 'display:block;');
 
-    para.appendChild(t);
-    docfrag.appendChild(para);
-    domparent.appendChild(docfrag);
+    var idreceived = nfc.bytesToHexString(nfcEvent.tag.id);
+
+    //if got the first time
+    if(typeof nfclistmap[idreceived] !== "undefined"){
+	var docfrag = document.createDocumentFragment();
+	var para=document.createElement("P");
+	var t=document.createTextNode(nfc.bytesToHexString(nfcEvent.tag.id));
+	
+	para.classList.add('event');
+	para.classList.add('received');
+	para.setAttribute('style', 'display:block;');
+
+	para.appendChild(t);
+	docfrag.appendChild(para);
+	domparent.appendChild(docfrag);
+
+	nfclistmap[idreceived] = para;
+	nfclastactive.classList.remove('received');
+	nfclastactive.classList.add('listening');
+	nfclastactive = para;
+    }
+    else {
+	if (nfclistmap[idreceived] != nfclastactive) {
+	    nfclastactive.classList.remove('received');
+	    nfclastactive.classList.add('listening');
+
+	    nfclastactive = nfclistmap[idreceived];
+	    nfclastactive.classList.remove('listening');
+	    nfclastactive.classList.add('received');
+	    nfclastactive.setAttribute('style', 'display:block;');   
+	}
+    }
+
 
     //alert(ndef.bytesToHexString(tag.id));
     //alert("Nfc working!");
