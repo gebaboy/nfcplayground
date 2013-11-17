@@ -81,7 +81,7 @@ function nfcTagDetected(nfcEvent) {
     var idreceived = nfc.bytesToHexString(nfcEvent.tag.id);
 
     //if got the first time
-    if(typeof nfclistmap[idreceived] !== "undefined"){
+    if(typeof nfclistmap[idreceived] == "undefined"){
 	console.log("newnfc");
 	var docfrag = document.createDocumentFragment();
 	var para=document.createElement("P");
