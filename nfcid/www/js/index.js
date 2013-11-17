@@ -82,7 +82,8 @@ function nfcTagDetected(nfcEvent) {
     para.appendChild(t);
     //para.classList.add('event');
     //para.classList.add('received');
-    domparent.appendChild(para);
+
+    //domparent.appendChild(para);
 
     //alert(ndef.bytesToHexString(tag.id));
     //alert("Nfc working!");
