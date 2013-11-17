@@ -96,8 +96,10 @@ function nfcTagDetected(nfcEvent) {
 	domparent.appendChild(docfrag);
 
 	nfclistmap[idreceived] = para;
-	nfclastactive.classList.remove('received');
-	nfclastactive.classList.add('listening');
+	if(typeof nfclastactive != "undefined"){
+	    nfclastactive.classList.remove('received');
+	    nfclastactive.classList.add('listening');
+	}
 	nfclastactive = para;
     }
     else {
