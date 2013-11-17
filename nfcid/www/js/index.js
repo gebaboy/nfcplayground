@@ -103,12 +103,12 @@ function nfcTagDetected(nfcEvent) {
     else {
 	console.log("oldnfc");
 	if (nfclistmap[idreceived] != nfclastactive) {
-	    nfclastactive.classList.remove('received');
-	    nfclastactive.classList.add('listening');
+//	    nfclastactive.classList.remove('received');
+//	    nfclastactive.classList.add('listening');
 
 	    nfclastactive = nfclistmap[idreceived];
-	    nfclastactive.classList.remove('listening');
-	    nfclastactive.classList.add('received');
+	    nfclastactive.classList.add('listening');
+	    nfclastactive.classList.remove('received');
 	    nfclastactive.setAttribute('style', 'display:block;');   
 	}
     }
