@@ -80,10 +80,12 @@ function nfcTagDetected(nfcEvent) {
     var docfrag = document.createDocumentFragment();
     var para=document.createElement("P");
     var t=document.createTextNode(nfc.bytesToHexString(nfcEvent.tag.id));
-    para.appendChild(t);
-    //para.classList.add('event');
-    //para.classList.add('received');
+    
+    para.classList.add('event');
+    para.classList.add('received');
+    para.setAttribute('style', 'display:block;');
 
+    para.appendChild(t);
     docfrag.appendChild(para);
     domparent.appendChild(docfrag);
 
